@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  color: #FFF;
+  padding: 1% 0;
+  font-size: 1.2em;
+  border:0;
+}
+
+.navbar-brand {
+  float:left;
+  min-height: 55px;
+  padding: 0 15px 5px;
+}
+
+.navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover {
+  color:aqua;
+}
+
+.row{
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Raleway', sans-serif;
+  text-rendering: optimizeLegibility !important;   /*important is used to overide boostrap default function/attribute.*/
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.hero{
+  position:absolute;
+  width:1140px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, 50%);
+  font-weight: 200px;
+}
+
+header {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("airplane-wallpaper-42-610x381.jpg");
+  height:100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+h1{
+  color:white;
+}
+
+.main-nav {
+  list-style: none;
+  float:right;
+  margin-top: 50px;
+}
+
+.main-nav li{
+  display: inline-block;
+  margin-left:20px;
+}
+
+.main-nav li a{
+  color: white;
+  font-size: 90%;
+}
+
+.logo img {
+  height:100px;
+  float:left;
+  margin-top: 20px;
+}
+
+.main-nav li a:hover {
+  color:aqua;
+  border-bottom: 1px solid #e67e22;
+  transition: all 500ms ease-in-out;
+  padding:15px 0px;
+}
+
+.btn {
+  border:1px solid aqua;
+  padding: 10px 30px;
+  color:aqua;
+  text-decoration: none;
+  border-radius: 12px;
+  margin-right:15px;
+}
+
+.button-popup {
+  margin-top: 30px;
+}
+
+.btn-half:hover {
+  background-color: aqua;
+  color:white;
+  transition: all 500ms ease-in-out;
+}
+
+.btn-full:hover {
+  background-color: aqua;
+  color:white;
+  transition: all 500ms ease-in-out;
+}
+
+a{
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 500ms ease-in-out;
+}
+
+
+

@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Raleway', sans-serif;
+  text-rendering: optimizeLegibility !important;   /*important is used to overide boostrap default function/attribute.*/
+  -webkit-font-smoothing: antialiased !important;
+}
+
+li{
+  list-style: none;list-style: none;
+  position: relative;
+  display: inline-block;
+}
+
+a{
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 500ms ease-in-out;
+}
+
+a:hover, a:active {
+  text-decoration: none;
+}
+
+h1, h2, h4 {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700px;
+}
+
+p {
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 21px;
+}
+
+.btn {
+  transition: all 300ms ease-in-out;
+  font-weight: 500px !important;
+  text-transform: button;
+}
+
+.btn:hover {
+  color: aqua !important;
+}
+
+/* Navigation */
+
+.navbar {
+  background-color: #222222 !important; 
+  /*important is used to overide boostrap default function/attribute.*/
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-weight: 700;
+
+}
+
+.navbar a {
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+
+.navbar a:hover {
+  opacity: 1;
+  color: aqua !important
+}
+
