@@ -52,8 +52,9 @@ app.post('/myaction', function(req, res) {
       }
     });
     if(flag > -1){
-      clientExit();
-      res.redirect('public/login');
+      clientExit()
+      //res.redirect('public/update_information')
+      res.end()
     }
 });
 
