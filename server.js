@@ -2,13 +2,14 @@ var express = require('express');
 var app     = express();
 var http = require('http');
 var flag = -1;
+var q = require('q');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var pg = require('pg');
-var conString = "postgres://postgres:postgres@localhost:5432/AirCobra";
-var client = new pg.Client(conString);
+var conString = "postgres://postgres:4jw3np4h@localhost:5432/425Project";
+
 /*
 client.connect();
 
@@ -58,14 +59,16 @@ app.post('/myaction', function(req, res) {
     }
 });
 
-function clientExit(){
-  client.end();
-}
 
 app.get('/youraction', function(req, res){
-    client.connect();
-    const query = client.query("SELECT FROM customer WHERE customer.email = '"+req.body.email+"' AND customer.firstname = '"+req.body.fname+"' AND customer.lastname = '"+req.body.lname+"'");
-})
+  runSQL("SELECT email,firstname FROM customer WHERE customer.email = '"+req.body.email+"' AND customer.firstname = '"+req.body.fname+"'").then(function(err, res) {
+    if(err){
+      console.log("there was an error");
+    }
+    else 
+      console.log(res);
+  }); 
+});
 
 /*var constring = 'postgres://postgres:4jw3np4h@localhost:8888/mydb';
 pg.connect(conString, function(err, client) {
@@ -77,4 +80,36 @@ var query = client.query("SELECT * FROM table");*/
     app.listen(8080, function() {
     console.log('Server running at http://127.0.0.1:8080/');
   });
+
+  
+function runSQL (sqlStatement) {
+  var deferred = q.defer(); 
+  var results = [];
+
+  // Get a Postgres client from the connection pool
+  pg.connect(conString, function(err, client, done) {
+
+
+      // SQL Query > Select Data
+      var query = client.query(sqlStatement, function(err, res) {
+          if(err) console.log(err);
+          deferred.resolve(res);
+      });
+
+
+      // After all data is returned, close connection and return results
+      query.on('end', function() {
+          client.end();
+          deferred.resolve(results);
+      });
+
+      // Handle Errors
+      if(err) {
+        console.log(err);
+      }
+
+  });
+
+  return deferred.promise;
+};
 

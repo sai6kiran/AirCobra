@@ -125,24 +125,12 @@
 		<div>Log<span>In</span></div>
 	</div>
 	<br>
-	<form name="login">
+	<form name="login" action="127.0.0.1:8080/youraction" method="get">
 		<div class="login">
-			<input type="text" placeholder="username" name="userid"><br>
-			<input type="password" placeholder="password" name="pswrd"><br>
-			<input type="button" onclick="check(this.form)" value="Login"/>
+			<input type="text" placeholder="username" name="email"><br>
+			<input type="password" placeholder="password" name="fname"><br>
+			<input type="submit" value="Login"/>
 		</div>
 	</form>
-	<script language="javascript">
-	function check(form)
-	{
-		if(form.userid.value=="dew" && form.pswrd.value=="123") {
-				window.open('http://www.youtube.com/user/thedewclarke')
-			}
-		else 
-		{
-			alert("The username and password you entered don't match")
-		}
-	}
-	</script>
 </body>
 </html>
