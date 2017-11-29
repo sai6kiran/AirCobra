@@ -200,7 +200,7 @@
 		<div>Sign<span>Up</span></div>
 	</div>
 	<br>
-	<form name="login">
+	<form action="/server.js" method="post" target="_blank" name="login">
 		<div class="login">
 			<input type="text" placeholder="First Name" name="fname"><br>
 			<input type="text" placeholder="Last Name" name="lname"><br>
@@ -208,17 +208,19 @@
 			<input type="text" placeholder="Address" name="add"><br>
 			<input type="text" placeholder="Username" name="userid"><br>
 			<input type="password" placeholder="Password" name="pswrd"><br>
-			<input type="button" onclick="check(this.form)" value="Sign Up"/>
+			<input type="text" placeholder="Credit Card Number" name="credit">
+			<input type="text" placeholder="Billing Address" name="badd"><br>
+			<input type="button" onclick= value="Sign Up"/>
 		</div>
 	</form>
-	<div class="footer">
+	<div class="footer" style="visibility: hidden">
 		<div>Credit<span>Info</span></div>
 	</div>
-	<br>
+	<!--<br>
 	<form name="login1">
 		<div class="login1">
 			<ul>
-				<input type="password" placeholder="Credit Card Number" name="credit">
+				<input type="text" placeholder="Credit Card Number" name="credit">
 				<input type="text" placeholder="Billing Address" name="badd"><br>
 				<input id="btnAdd1" type="button" onclick="check(this.form)" value="Add"/>
 			</ul>
@@ -228,10 +230,10 @@
 	<script language="javascript">
 		$(document).ready(function() {
 			$('#btnAdd1').on('click', function() {
-				var input_item = '<input type="password" placeholder="Credit Card Number" name="credit"><input type="text" placeholder="Billing Address" name="badd">';
+				var input_item = '<input type="text" placeholder="Credit Card Number" name="credit"><input type="text" placeholder="Billing Address" name="badd">';
 				$('ul').append(input_item);
 			});
 		});
-	</script>
+	</script>-->
 </body>
 </html>

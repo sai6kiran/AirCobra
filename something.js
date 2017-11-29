@@ -1,10 +1,10 @@
 var pg = require('pg');
-var constring = 'postgres://YourUserName:YourPassword@localhost:5432/YourDatabase';
+var constring = 'postgres://postgres:postgres@localhost:5432/AirCobra';
 
 var client = new pg.Client(conString);
 client.connect();
 
-
+/*
 var x = 1000;
 
 while(x > 0) {
@@ -29,3 +29,4 @@ client.query({
     text: 'INSERT INTO table(a, b ,c) values($1, $2, $3)',
     values: ['a','b','c']
 });
+*/
