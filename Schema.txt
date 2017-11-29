@@ -1,0 +1,71 @@
+
+CREATE TABLE CreditCard
+(
+	creditCardNumber INTEGER,
+	paymentAddress VARCHAR (9),
+	PRIMARY KEY (creditCardNumber),
+	CHECK ( creditCardNumber IS NOT NULL OR paymentAddress IS NOT NULL )
+) ;
+
+CREATE TABLE Price
+(
+	BookingNumber INTEGER,
+	FirstClassPrice NUMERIC,
+	EconomyClassPrice NUMERIC,
+	PRIMARY KEY (BookingNumber) ,
+CHECK ( FirstClassPrice IS NOT NULL OR EconomyClassPrice IS NOT NULL OR   BookingNumber IS NOT NULL) 
+);
+
+CREATE TABLE Airport(
+	Country VARCHAR ( 15 ) NOT NULL,
+	IATA VARCHAR ( 3 ),
+	State VARCHAR ( 10 ) NOT NULL,
+	apName VARCHAR ( 25 ) NOT NULL,
+	PRIMARY KEY (IATA) 
+) ;
+
+CREATE TABLE Customer
+(
+	FirstName VARCHAR (500) NOT NULL,
+	LastName VARCHAR (500) NOT NULL,
+  	Email VARCHAR (100) NOT NULL,
+	Address VARCHAR (1000) NOT NULL,
+	creditCardNumber INTEGER NOT NULL UNIQUE,
+	hIATA VARCHAR (3) NOT NULL,
+	PRIMARY KEY (Email),
+	FOREIGN KEY (creditCardNumber) REFERENCES CreditCard(creditCardNumber),
+	FOREIGN KEY (hIATA ) REFERENCES Airport(IATA)
+); 
+
+CREATE TABLE Airline
+(
+  	AirlineCode VARCHAR (2) NOT NULL,
+  	IATA VARCHAR (3) NOT NULL,
+  	fullname VARCHAR(200) NOT NULL,
+  	country_of_origin VARCHAR(500) NOT NULL,
+  	PRIMARY KEY (AirlineCode),
+  	FOREIGN KEY (IATA) REFERENCES Airport(IATA)
+);
+
+CREATE TABLE Flight
+(
+	AirlineCode VARCHAR (2),
+	FlightNumber INTEGER UNIQUE,
+	Date DATE,
+	PRIMARY KEY (AirlineCode, FlightNumber),
+	CHECK ( AirlineCode IS NOT NULL OR FlightNumber IS NOT NULL OR Date IS NOT NULL),
+	FOREIGN KEY (AirlineCode) REFERENCES Airline(AirlineCode)
+);
+
+CREATE TABLE Booking
+(
+	seatPosition VARCHAR ( 4 ) ,
+	bookingNumber INTEGER NOT NULL,
+	FlightNumber INTEGER NOT NULL,
+	creditCardNumber INTEGER NOT NULL,
+	Meal BOOLEAN NOT NULL,
+	seatClass VARCHAR( 6 ) NOT NULL, 
+	PRIMARY KEY (bookingNumber),
+	FOREIGN KEY (creditCardNumber) REFERENCES Customer(creditCardNumber),
+	FOREIGN KEY (FlightNumber) REFERENCES Flight(FlightNumber)
+) ;
