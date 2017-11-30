@@ -1,417 +1,376 @@
-
-
+<html>
 <!DOCTYPE html>
-<html class="skyscanner  legacy-button " lang="en-US" >
+<html lang="en">
 <head>
-    
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-<meta http-equiv="X-UA-Compatible" content="IE=10" />
-<meta http-equiv="Content-Language" content="en-US"/>
-    
-
-<script>window['start-time'] = new Date().getTime();</script>
-
-
-<script type="text/javascript">
-    (function() {
-        var executeImmediately = false;
-
-        window.addLoadEventHandler = function (fn) {
-            executeImmediately ? setTimeout(function () {
-                fn(); }, 0) : window.addEventListener ? window.addEventListener('load', fn, false) : window.attachEvent ? window.attachEvent('onload', fn) : void 0;
+    <title>Booking</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .logo img {
+            height:100px;
+            float:left;
+            margin-top: -20px;
         }
-        addLoadEventHandler(function () { executeImmediately = true; });
-
-        window.injectScript = function (src, callback, type) {
-            var an = document.createElement('script');
-            an.type = type || 'text/javascript';
-            an.async = true;
-            if (callback) an.onload = callback;
-            an.src = src.indexOf('//') === 0 ? src : src.indexOf('http') == 0 ? src : ('https:' == document.location.protocol ? 'https://' : 'http://') + document.location.host + src;
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(an, s);
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            color: #FFF;
+            padding: 0.6% 0;
+            border:0;
+        }
+        .navbar-brand {
+            float:left;
+            min-height: 60px;
+            padding: 0 10px 5px;
+        }
+        .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover {
+            color:#FFF;
+        }
+        .navbar-inverse .navbar-nav li a {
+            color: #D5D5D5;
+        }
+        .navbar li a:hover {
+        color:aqua !important;
+        border-bottom: 0.3px solid #e67e22;
+        transition: all 500ms ease-in-out;
+        }
+        .carousel-caption {
+            top:57%;
+            transform: translateY(-50%);
+            text-transform: uppercase;
+        }
+        .btn{
+            font-size: 18px;
+            color:#FFF;
+            background-color: black;
+            border: 2px solid #FFF;
+        }
+        .align {
+            margin-top: 15%;
+            margin-left: -80%;
+        }
+        .align1 {
+            margin-left:80%;
+            margin-top: -5%;
+        }
+        .container {
+            margin: 2% auto;
+        }
+        footer{
+            width: 100%;
+            background-color:black;
+            padding:0.3%;
+            color:#FFF;
+        }
+        .fa {
+            padding: 20px;
+            font-size: 20px;
+            margin-top: -14%;
+        }
+        .fa:hover {
+            text-decoration: none;
+        }
+        @media (max-width: 900px) {
+            .fa{
+                font-size: 20px;
+                padding: 14px;
+                margin-top: -24%;
+            }
         }
 
-        window._collectedErrors = [];
-        var existingHandler = window.onerror;
-        window.onerror = function() { window._collectedErrors.push(arguments) && existingHandler && existingHandler.apply(this, arguments); }
-    })();
-</script>
-
-    <title>
-Cheap Flights - Find Cheap Airline Tickets with Skyscanner    </title>
-
-    
-<link rel="dns-prefetch" href="//api.mixpanel.com">
-<link rel="dns-prefetch" href="https://secure.skyscanner.net">
-<link rel="dns-prefetch" href="//www.google-analytics.com">
-<link rel="dns-prefetch" href="//cdn.mxpnl.com">
-<link rel="dns-prefetch" href="//www.googletagservices.com">
-<link rel="dns-prefetch" href="//analytics.skyscanner.net">
-
-    <link rel="canonical" href="https://www.skyscanner.com/" />
-    
- 
-
-<link rel="stylesheet" type="text/css" href="//css.skyscnr.com/sttc/scaffolding/css/core.3182a1ed.css"/>    
-
-
-    <!-- media queries css -->
-    
-    <link rel="stylesheet" href="/hsc/css/homepage.f1831df1bc2940ae9c01f554f5760871.css">
-
-
-  
-<link rel=stylesheet type='text/css' href='//css.skyscnr.com/inspiration/static/4297/inspirationTimeline/inspirationTimeline.min.css' />
-
-
-
-
-
-  
-<link rel="stylesheet" type="text/css" href="//css.skyscnr.com/flightsearch/static/searchcontrols.b0c8173513a6b199aa60.css"/>
-
-
-
-
-<link rel="stylesheet" href="/hsc/css/confidence_panels.22553f81ed27b25d6d3f17e15bee451b.css">
-
-
-
-
-<link rel="stylesheet" href="//css.skyscnr.com/sttc/hotels-front-end/athome/css/athome-146003980d2564b187e5c37f170a54f7.css">
-
-
-
-    
-    <meta name="description" content="Skyscanner's flight search will help you find cheap flights and airline tickets to your favorite travel destinations. Book direct with no fees at Skyscanner." />
-    <meta name="keywords" content="Cheap Flights, Airline Tickets, Last Minute Flights, Airfare Comparison, Skyscanner" />
-        <meta name="p:domain_verify" content="25c22dbccb870d0d48d6a9aea68fe8ad" />
-    
-
-    
-		<link rel="alternate" href="android-app://net.skyscanner.android.main/skyscanner/home"/>
-
-
-    
-<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
-<meta name="y_key" content="3ccd97fca3bc5b05" />
-
-
-
-<meta property="og:title" content="Skyscanner | Find the cheapest flights fast: save time, save money!" /><meta property="og:url" content="http://www.skyscanner.com/?utm_medium=social&amp;utm_campaign=addthis&amp;utm_source=facebook_us" /><meta property="og:image" content="http://www.skyscanner.com/images/opengraph_v1.png" /><meta property="og:image:width" content="256" /><meta property="og:image:height" content="256" /><meta property="og:image:type" content="image/png" /><meta property="og:description" content="Compare millions of flights, as well as car rental and hotels worldwide - for free! Skyscanner is the travel search site for savvy travelers." /><meta property="og:type" content="product" />
-    <script type="text/javascript">
-        if (typeof Skyscanner === "undefined") {
-            Skyscanner = {};
+        .login1{
+            position:absolute;
+            top: calc(50% - 150px);
+            left: calc(50% - 50px);
+            height:150px
+            width:350px;
+            margin-left:-50%;
+            padding:10px;
         }
-    
-        Skyscanner.ogtitle = "Skyscanner | Find the cheapest flights fast: save time, save money!";
-        Skyscanner.ogurl = "http://www.skyscanner.com/?utm_medium=social&amp;amp;utm_campaign=addthis&amp;amp;utm_source=facebook_us";
-        Skyscanner.ogimage = "http://www.skyscanner.com/images/opengraph_v1.png";
-        Skyscanner.ogdescription = "Compare millions of flights, as well as car rental and hotels worldwide - for free! Skyscanner is the travel search site for savvy travelers.";
-    </script>
+        .login1 input[type=text] {
+            width:150px;
+            height:30px;
+            background:transparent;
+            border:1px solid rgba(255,255,255,0.6);
+            border-radius:2px;
+            color:aqua;
+            font-size:16px;
+            font-weight:400;
+            padding:4px;
+        }
+        .login1 input[type=password] {
+            width:150px;
+            height:30px;
+            background:transparent;
+            border:1px solid rgba(255,255,255,0.6);
+            border-radius:2px;
+            color:aqua;
+            font-size:16px;
+            font-weight:400;
+            padding:4px;
+        }
+        .login1 input[type=date] {
+            width:137px;
+            height:30px;
+            background:transparent;
+            border:1px solid rgba(255,255,255,0.6);
+            border-radius:2px;
+            color:aqua;
+            font-size:16px;
+            font-weight:400;
+            padding:4px;
+        }
+        .login1 input[type=button]{
+            width:150px;
+            height:30px;
+            background:transparent;
+            border:1px solid #fff;
+            cursor: pointer;
+            border-radius:2px;
+            color:aqua;
+            font-family: 'Exo', sans-serif;
+            font-size:16px;
+            font-weight:400;
+            padding:6px;
+            margin-top: -5px;
+            margin-left:0%;
+        }
+        .login1 input [type=button]:hover{
+            opactiy:0.8;
+        }
+        .login1 input [type=button]:active{
+            opactiy:0.6;
+        }
+        .login1 input [type=text]:focus{
+            outline:none;
+            border:1px solid rgba(255,255,255,0.9);
+        }
+        .login1 input[type=password]:focus{
+            outline:none;
+            border:1px solid rgba(255, 255, 255, 0.9);
+        }
+        .login1 input[type=button]:focus{
+            outline:none;
+        }
+        ::-webkit-input-placeholder{
+            color: rgba(255,255,255,0.6);
+        }
+        ::-moz-input-placeholder{
+            color: rgba(255,255,255,0.6);
+        }
 
-<meta name="apple-itunes-app" content="app-id=415458524,app-argument=skyscanner://home?&utm_source=apple&utm_medium=organic&utm_campaign=appbanner" />    
-<meta name="msApplication-ID" content="App"/> <meta name="msApplication-PackageFamilyName" content="Skyscanner.Skyscanner_623c9he0pwcym"/> <meta name="msApplication-MinVersion" content="1.2.0.0"/>    
-
-    
-<script type="text/javascript" src="/jp671.js" defer></script><style type="text/css">#d__fFH{position:absolute;top:-5000px;left:-5000px}#d__fF{font-family:serif;font-size:200px;visibility:hidden}#ecfezdrrvctscytyse{display:none!important}</style>
-<script>!function(){function e(e){d.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}function n(e,n){var a="undefined"!=typeof window.aFeoApplied?"1":"0";BOOMR.addVar("ak.feo",a)}function a(e,n){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.r"];BOOMR.removeVar(a)}function t(){var e="",t="true"==e;BOOMR.subscribe("before_beacon",n,null,null),BOOMR.addVar({"ak.v":1,"ak.cp":"109768","ak.ai":"233543","ak.ol":"0","ak.cr":10,"ak.ipv":4,"ak.proto":"h2","ak.rid":"4a14bd59","ak.r":30968,"ak.a2":t?1:0,"ak.m":"a","ak.n":"","ak.bpcip":"104.194.100.231","ak.cport":50791,"ak.gh":"23.48.94.29","ak.quicv":"","ak.csrc":"-"}),BOOMR.subscribe("onbeacon",a,null,null)}if(!window.BOOMR||!window.BOOMR.version){var o,r,i,c=document.createElement("iframe"),d=window;d.addEventListener?d.addEventListener("load",e,!1):d.attachEvent&&d.attachEvent("onload",e),c.src="javascript:void(0)",c.title="",c.role="presentation",(c.frameElement||c).style.cssText="width:0;height:0;border:0;display:none;",i=document.getElementsByTagName("script")[0],i.parentNode.insertBefore(c,i);try{r=c.contentWindow.document}catch(e){o=document.domain,c.src="javascript:var d=document.open();d.domain='"+o+"';void(0);",r=c.contentWindow.document}r.open()._l=function(){var e=this.createElement("script");o&&(this.domain=o),e.id="boomr-if-as",e.src="https://s.go-mpulse.net/boomerang/QRHAF-VKPV6-ZTS8J-965A3-72Q93",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(e)},r.write('<body onload="document._l();">'),r.close();var _="";_.length>0&&d&&"performance"in d&&d.performance&&d.performance.setResourceTimingBufferSize&&d.performance.setResourceTimingBufferSize(),document.addEventListener?document.addEventListener("onBoomerangLoaded",t):document.attachEvent&&document.attachEvent("onpropertychange",function(e){e||(e=window.event),e&&"onBoomerangLoaded"===e.propertyName&&t()})}}();</script></head>
-
-<body id="category-flights" class="lang-en page-home action-index   default-layout    spring-clean month-view-spring-clean    ">
-
-
-
-<noscript>
-    <div class="no-js-msg">
-        <p>Skyscanner needs JavaScript to work. It looks like your browser doesn't support JavaScript, or has it turned off. Please try again with JavaScript support.</p>
-    </div>
-</noscript>
-<div id="pagewrap" class="clearfix">
-        <div class="wrap h1-heading">
-            <h1 id="h1-heading">Cheap Flights - Find Cheap Airline Tickets with Skyscanner</h1>
-        </div>
-
-
-        
-<link rel="stylesheet" href="//js.skyscnr.com/sttc/oc-registry/components/header/0.4.61/build/static/css/main.c07379c9.css">
-
-
-    
-    <!-- START Content -->
-    <div id="trip-shortlist" class="hidden">
-    </div>
-    <div id="container-trip-planning-refactor" class="trip-planning hidden">
-    </div>
-
-    
-
-    <div id="content-wrap" class="wrap clearfix">
-
-
-		
-
-
-		
-
-
-
-
-
-
- <div id="home-container" class="homecontent" style="background-image: url(//content.skyscnr.com/6bf5a29ce130132f28e912434f295b76/canada-lake-feb.jpg?crop=200px:45px&amp;quality=40)">
-    <div class="wrap-homecontent">
-      
-      <div id="searchcontrol">
-        
-        
-          
-
-<section id="js-search-controls-container" class="search-controls one-line-search-controls opaque-on-desktop">
-        <form action="#" class="clearfix">
-                <section id="js-trip-type" class="search-controls-trip-type multi-city-enabled">
-                    <div class="mobile-container">
-                        <input type="radio" id="js-is-return-input" name="trip-type" value="return" class="visuallyhidden" tabindex="1" />
-                        <label for="js-is-return-input" class="return-trip">Roundtrip</label>
-                        <input type="radio" id="js-one-way-input" name="trip-type" value="oneway" class="visuallyhidden" tabindex="1" />
-                        <label for="js-one-way-input" class="one-way-trip">One way</label>
-                        <input type="radio" id="js-multi-city-input" name="trip-type" value="multicity" class="visuallyhidden" tabindex="1" />
-                        <label for="js-multi-city-input" class="multi-city-trip">Multi-city</label>
-                    </div>
-                </section>
-            <section class="traditional-search clearfix">
-                <div id="js-places" class="search-controls-places clearfix">
-                    <div class="origin-place">
-                        <label for="js-origin-input" class="place-label">From</label>
-                        <input type="text" id="js-origin-input" tabindex="2" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto">
-                        <label class="nearby-alts sc-checkbox">
-                            <input type="checkbox" id="js-outbound-alts" class="visuallyhidden" />
-                            Add nearby airports
-                        </label>
-                    </div>
-                    <button type="button" id="js-places-toggle" class="swap-button" title="Click here to swap locations">
-                        <span class="visuallyhidden">Click here to swap locations</span>
-                    </button>
-                    <div class="destination-place">
-                        <label for="js-destination-input" class="place-label">To</label>
-                        <input type="text" id="js-destination-input" placeholder="Enter a country, city or airport" tabindex="2" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto">
-                        <label class="nearby-alts sc-checkbox">
-                            <input type="checkbox" id="js-inbound-alts" class="visuallyhidden" />
-                            Add nearby airports
-                        </label>
-                    </div>
-                </div><div id="js-dates" class="search-controls-dates">
-                    <div class="depart">
-                        <label for="js-depart-input">Depart</label>
-                        <input type="text" id="js-depart-input" tabindex="3" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly="">
-                    </div>
-                    <div class="return ">
-                        <label for="js-return-input">Return</label>
-                        <input type="text" id="js-return-input" tabindex="3" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly="">
-                    </div>
-                    <span id="js-depart-summary" class="date-summary"></span>
-                    <span id="js-return-summary" class="date-summary"></span>
-                </div><div id="js-pax-cabin-class" class="search-controls-pax-cabin-class">
-                    <label for="js-trad-cabin-class-travellers-toggle">Cabin Class &amp; Travelers</label>
-                    <button type="button" id="js-trad-cabin-class-travellers-toggle" class="cabin-class-travellers-trigger" tabindex="1">
-                        <span class="down-arrow">â–¼</span>
-                        <span class="adult-icon"></span>
-                    </button>
-                </div>
-                <label class="sc-checkbox prefer-directs">
-                    <input type="checkbox" id="js-prefer-directs" class="visuallyhidden" tabindex="1"> Non-stop flights only
-                </label>
-                <button class="js-search-button fss-bpk-button fss-bpk-button--large" type="button" tabindex="1">
-                    <span class="bpk-text">Search flights&nbsp;</span>
-                    <span class="bpk-icon-lg bpk-icon-pointer bpk-icon-lg--align-to-button"></span>
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-            </section>
-        </form>
-</section>
+                <div class="logo">
+                    <a class="navbar-brand" href="#"><img src="ai.png"></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="i.html">Home</a></li>
+                    <li><a href="update_information.html">Update Information</a></li>
+                    <li><a href="https://www.skyscanner.com/hotels?na=1&sd=2017-11-28&ed=2017-11-29">Cheap Hotels</a></li>
+                    <li><a href="https://www.skyscanner.com/car-rental/?pick_up_date=2017-11-28">Car Rental</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        
-      </div>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Roundtrip</a></li>
+  <li><a data-toggle="tab" href="#menu1">One Way</a></li>
+  <li><a data-toggle="tab" href="#menu2">Multi-city</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="canada-lake-feb.jpg" width="1500" >
+                <div class="carousel-caption">
+                    <form name="login1">
+                        <div class="login1">
+                                <input type="text" placeholder="From : Departure" name="credit">
+                                <input type="date" placeholder="Departure Date" name="dep">
+                                <input type="text" placeholder="To : Arrival" name="badd">
+                                <input type="date" placeholder="Return Date" name="ret">
+                                <input id=" noc" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" value="No. of Connections" name="con" ><span class="caret"></span>
+                                <ul class="dropdown-menu" id="dropdown" style="margin-left:635; margin-top:-35;">
+                                  <li><a href="#">1</a></li>
+                                  <li><a href="#">2</a></li>
+                                  <li><a href="#">3</a></li>
+                                  <li><a href="#">4</a></li>
+                                  <li><a href="#">5</a></li>
+                                  <li><a href="#">6</a></li>
+                                  <li><a href="#">7</a></li>
+                                </ul>
+                                <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+                                <script language="javascript">
+                                    $(".dropdown-menu li a").click(function(){
+                                    $(this).parents(".login1").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+                                    $(this).parents(".login1").find('.btn').val($(this).data('value'));
+                                });
+                                </script>
+                                <input type="text" placeholder="Preferred Duration" name="dur">
+                                <input type="text" placeholder="Preferred Price" name="dep"><br>
+                        </div>
+                    </form>
+                    <div class="align">
+                    <a href="https://www.google.com/maps"><button type="button" class="btn btn-default">Map</button></a>
+                    </div>
+                    <div class="align1">
+                    <a href="login.html"><button type="button" class="btn btn-default" href="login.html">Search Flights</button></a>
+                    </div>
+                </div>
+            </div>  <!---End Active -->
+        </div>
     </div>
   </div>
-
-
-  <div id="timeline-outer">
-    <div class="wrap clearfix">
-        <div class="inspiration-timeline">
-            <ul class="timeline">
-                <li class="timeline__block">
-                    <div class="dot timeline-foreground"></div>
-                    <div class="timeline-head">
-                        <h2>&nbsp;</h2>
-                        <time class="time"><span></span></time>
-                        <div class="origin">
-                            <label for="inspiration-timeline-origin"></label>
-                            <input type="text" id="inspiration-timeline-origin" class="inline-edit" autocomplete="off" tabindex="1" value="">
+  <div id="menu1" class="tab-pane fade">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="canada-lake-feb.jpg" width="1500" >
+                <div class="carousel-caption">
+                    <form name="login1">
+                        <div class="login1">
+                                <input type="text" placeholder="From : Departure" name="credit">
+                                <input type="date" placeholder="Departure Date" name="dep">
+                                <input type="text" placeholder="To : Arrival" name="badd">
+                                <input id=" noc" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" value="No. of Connections" name="con" ><span class="caret"></span>
+                                <ul class="dropdown-menu" id="dropdown" style="margin-left:635; margin-top:-35;">
+                                  <li><a href="#">1</a></li>
+                                  <li><a href="#">2</a></li>
+                                  <li><a href="#">3</a></li>
+                                  <li><a href="#">4</a></li>
+                                  <li><a href="#">5</a></li>
+                                  <li><a href="#">6</a></li>
+                                  <li><a href="#">7</a></li>
+                                </ul>
+                                <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+                                <script language="javascript">
+                                    $(".dropdown-menu li a").click(function(){
+                                    $(this).parents(".login1").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+                                    $(this).parents(".login1").find('.btn').val($(this).data('value'));
+                                });
+                                </script>
+                                <input type="text" placeholder="Preferred Duration" name="dur"><br>
                         </div>
+                    </form>
+                    <div class="align">
+                    <a href="https://www.google.com/maps"><button type="button" class="btn btn-default">Map</button></a>
                     </div>
-                    <div class="shelf timeline-middleground loading" id="shelf-1">
-                        <div class="shelf-tiles">
-                            <div class="tile loading half full indent">
-                                <a>
-                                    <div class="content"></div>
-                                </a>
-                            </div><div class="tile loading quarter indent-wrap">
-                                <a>
-                                    <div class="content"></div>
-                                </a>
-                            </div><div class="tile loading quarter">
-                                <a>
-                                    <div class="content"></div>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="align1">
+                    <a href="login.html"><button type="button" class="btn btn-default" href="login.html">Search Flights</button></a>
                     </div>
-
-                    <div class="alternative-link" data-index="0">
-                        <a href="" class="everywhere-link"></a>
-                        <a href="" class="map-link"></a>
-                    </div>
-                </li>
-
-                <li class="timeline__custom-slot--inactive">
-                </li>
-
-                <li class="timeline__block">
-                    <div class="dot timeline-foreground"></div>
-                    <div class="timeline-head">
-                        <h2>&nbsp;</h2>
-                        <time class="time"><span></span></time>
-                    </div>
-                    <div class="shelf timeline-middleground loading" id="shelf-2">
-                        <div class="shelf-tiles">
-                            <div class="tile loading half full indent">
-                                <a>
-                                    <div class="content"></div>
-                                </a>
-                            </div><div class="tile loading quarter indent-wrap">
-                                <a>
-                                    <div class="content"></div>
-                                </a>
-                            </div><div class="tile loading quarter">
-                                <a>
-                                    <div class="content"></div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="alternative-link" data-index="1">
-                        <a href="" class="everywhere-link"></a>
-                        <a href="" class="map-link"></a>
-                    </div>
-                </li>
-
-                <li class="timeline__block">
-                    <div class="dot timeline-foreground"></div>
-                    <div class="timeline-head">
-                        <h2>&nbsp;</h2>
-                        <time class="time" datetime="2014-08-28"><span>28 August 2016 - 30 August 2016</span></time>
-                    </div>
-                    <div class="shelf timeline-middleground loading" id="shelf-3">
-                        <div class="shelf-tiles">
-                            <div class="tile loading third full indent">
-                                <a>
-                                    <div class="content"></div>
-                                </a>
-                            </div><div class="tile loading third indent-wrap">
-                                <a>
-                                    <div class="content"></div>
-                                </a>
-                            </div><div class="tile loading third">
-                                  <a>
-                                      <div class="content"></div>
-                                  </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="alternative-link" data-index="2">
-                        <a href="" class="everywhere-link"></a>
-                        <a href="" class="map-link"></a>
-                    </div>
-                </li>
-            </ul>
+                </div>
+            </div>  <!---End Active -->
         </div>
     </div>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="canada-lake-feb.jpg" width="1500" >
+                <div class="carousel-caption">
+                    <form name="login1">
+                        <div class="login1">
+                            <ul style="margin-left:250">
+                                <input type="text" placeholder="From : Departure" name="credit">
+                                <input type="text" placeholder="To : Connection" name="badd"><br>
+                                <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+                                <input id="btnAdd1" type="button" onclick="check(this.form)" style="margin-top:100" value="Add"/>
+                            </ul>
+                        </div>
+                    </form>
+                    <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+                    <script language="javascript">
+                        $(document).ready(function() {
+                            $('#btnAdd1').on('click', function() {
+                                var input_item = ' <input type="text" placeholder="From : Departure" name="credit"><input type="text" placeholder="To : Connection" name="badd"><input type="date" placeholder="Departure Date" name="dep"><input type="text" placeholder="Seat Class" name="st"><input type="text" placeholder="Seat" name="seat"><input type="text" placeholder="Preferred Duration" name="dur"><input type="text" placeholder="Preferred Price" name="dep"><br>';
+                                $('ul').append(input_item);
+                            });
+                        });
+                    </script>
+                    <div class="align">
+                    <a href="https://www.google.com/maps"><button type="button" class="btn btn-default">Map</button></a>
+                    </div>
+                    <div class="align1">
+                    <a href="login.html"><button type="button" class="btn btn-default" href="login.html">Search Flights</button></a>
+                    </div>
+                </div>
+            </div>  <!---End Active -->
+        </div>
+    </div>
+  </div>
+  </div>
 </div>
 
-
-
-<div id="second-tier-content-container">
-  <section class="confidence-panels clearfix with-images">
-
-  <article class="confidence-panel item-0">
-
-
-    
-    <div class="panelimage search-world">
+<div class="container text-center">
+        <div class="row">
+            <div class="col-sm-8 col-md-6 col-lg-12">
+                <li class="dropdown">
+                    <button id="options" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" style="margin-left:1000" >Chose option<span class="caret"></span></button>
+                        <ul class="dropdown-menu" style="margin-left: 1000">
+                            <li><a href="#" >Price</a></li>
+                            <li><a href="#">Length of Flight</a></li>
+                        </ul>
+                </li>
+                <script>
+                    $(document).ready(function(){
+                        $(".dropdown-menu li a").click(function(){
+                        $("#options").text($(this).text());
+                        });
+                    });
+                </script>
+            </div>
+        </div>
     </div>
-      
 
-    <div class="heading clearfix">
-      <h3>What is Skyscanner.com?</h3>
-    </div>
-    <span class="content">
-      <span>Skyscanner compares millions of flights to find you the cheapest deal, fast. We also compare and find the cheapest hotels and car rental for your next trip.</span>
-    </span>
-  </article>
-
-  <article class="confidence-panel item-1">
-
-
-    
-    <div class="panelimage free">
-    </div>
-      
-
-    <div class="heading clearfix">
-      <h3>Skyscanner is free!</h3>
-    </div>
-    <span class="content">
-      <span>When you find your flights and click to book, we link you through directly to the airline or travel agent. No hidden charges, no added fees. So you get the best deals every time!</span> <a href="https://www.skyscanner.com/customer-charter/"> See more ways we put you first.</a>
-    </span>
-  </article>
-
-  <article class="confidence-panel item-2">
-
-
-    
-    <div class="panelimage social">
-    </div>
-      
-
-    <div class="heading clearfix">
-      <h3>We’re on Facebook</h3>
-    </div>
-    <span class="content">
-      <a href="https://www.facebook.com/skyscannerUSA">Join us on Facebook</a>&nbsp;and&nbsp;<a href="https://twitter.com/skyscannerusa">Twitter</a><span>&nbsp;for travel chat, hot deals and giveaways.</span>
-    </span>
-  </article>
-
-  <article class="confidence-panel item-3">
-
-
-    
-    <div class="panelimage price-alerts">
-    </div>
-      
-
-    <div class="heading clearfix">
-      <h3> Get travel tips &amp; cheap flights sent to you! </h3>
-    </div>
-    <span class="content">
-      <div><span>Sign up now for our <a href="https://www.skyscanner.com/news/sign-skyscanners-free-newsletter">weekly newsletter</a> to get flight deals, travel tips and inspiration sent to you.</span></div>
-    </span>
-  </article>
-
-</section>
-
-</div>
-
+    <footer class="container-fluid text-center">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Contact Us</h3>
+                <h5>3241 S Wabash Ave, Chicago, IL 60616</h5>
+            </div>
+            <div class="col-sm-4">
+                <h3>Connect</h3>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+            </div>
+            <div class="col-sm-4">
+                <h3>Developers</h3>
+                <h5>Saikiran Yerraguntla | Jithin Joyson | Tanwir Lalani</h5>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
