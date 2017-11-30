@@ -3,6 +3,7 @@ var app     = express()
 var http = require('http')
 var flag = -1
 var q = require('q')
+app.use(express.static(__dirname + '/Web_design'));
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -11,6 +12,38 @@ var pg = require('pg')
 var conString = "postgres://postgres:postgres@localhost:5432/AirCobra"
 var client = new pg.Client(conString)
 var email = ''
+
+app.get('/sign_up.html', function(req, response){
+  response.sendFile('Web_design/sign_up.html', {root: __dirname });
+});
+
+app.get('/wsign_up.html', function(req, response){
+  response.sendFile('Web_design/wsign_up.html', {root: __dirname });
+});
+
+app.get('/login.html', function(req, response){
+  response.sendFile('Web_design/login.html', {root: __dirname });
+});
+
+app.get('/wlogin.html', function(req, response){
+  response.sendFile('Web_design/wlogin.html', {root: __dirname });
+});
+
+app.get('/booking.html', function(req, response){
+  response.sendFile('Web_design/booking.html', {root: __dirname });
+});
+
+app.get('/update_information.html', function(req, response){
+  response.sendFile('Web_design/update_information.html', {root: __dirname });
+});
+
+app.get('/wupdate_information.html', function(req, response){
+  response.sendFile('Web_design/wupdate_information.html', {root: __dirname });
+});
+
+app.get('/i.html', function(req, response){
+  response.sendFile('Web_design/i.html', {root: __dirname });
+});
 
 app.post('/login', function(req, response) {
   pg.connect(conString, function (err, client, done) {
@@ -30,7 +63,7 @@ app.post('/login', function(req, response) {
         done
         if (typeof(res.rows[0]) != "undefined"){
           email = req.body.email
-          response.sendFile('Web_design/update_information.html', {root: __dirname })
+          response.sendFile('Web_design/booking.html', {root: __dirname })
         }
         else{
           response.sendFile('Web_design/wlogin.html', {root: __dirname })
@@ -59,7 +92,7 @@ app.post('/myaction', function(req, response) {
         done
         if (typeof(res.rows[0]) != "undefined"){
           email = req.body.email
-          response.sendFile('Web_design/update_information.html', {root: __dirname })
+          response.sendFile('Web_design/booking.html', {root: __dirname })
         }
         else{
           response.sendFile('Web_design/wsign_up.html', {root: __dirname })

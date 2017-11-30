@@ -212,7 +212,17 @@
                                 <input type="date" placeholder="Departure Date" name="dep">
                                 <input type="text" placeholder="To : Arrival" name="badd">
                                 <input type="date" placeholder="Return Date" name="ret">
-                                <input id=" noc" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" value="No. of Connections" name="con" ><span class="caret"></span>
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" value = "Limit of Connections" >
+                                    <option value="Limit of Connections">Limit of Connections</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                  </select>
+                               <!-- <input id=" noc" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" value="No. of Connections" name="con" ><span class="caret"></span>
                                 <ul class="dropdown-menu" id="dropdown" style="margin-left:635; margin-top:-35;">
                                   <li><a href="#">1</a></li>
                                   <li><a href="#">2</a></li>
@@ -221,7 +231,7 @@
                                   <li><a href="#">5</a></li>
                                   <li><a href="#">6</a></li>
                                   <li><a href="#">7</a></li>
-                                </ul>
+                                </ul>-->
                                 <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
                                 <script language="javascript">
                                     $(".dropdown-menu li a").click(function(){
@@ -230,7 +240,13 @@
                                 });
                                 </script>
                                 <input type="text" placeholder="Preferred Duration" name="dur">
-                                <input type="text" placeholder="Preferred Price" name="dep"><br>
+                                <input type="text" placeholder="Preferred Price" name="dep">
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" value = "Order by" >
+                                    <option value="Order by">Order by</option>
+                                    <option value="Price">Price</option>
+                                    <option value="Flight Length">Flight Length</option>
+                                  </select>
+                                <br>
                         </div>
                     </form>
                     <div class="align">
@@ -258,7 +274,18 @@
                                 <input type="text" placeholder="From : Departure" name="credit">
                                 <input type="date" placeholder="Departure Date" name="dep">
                                 <input type="text" placeholder="To : Arrival" name="badd">
-                                <input id=" noc" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" value="No. of Connections" name="con" ><span class="caret"></span>
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" value = "Limit of Connections" >
+                                    <option value="Limit of Connections">Limit of Connections</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                </select>
+                                
+                                <!--<input id=" noc" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" value="No. of Connections" name="con" ><span class="caret"></span>
                                 <ul class="dropdown-menu" id="dropdown" style="margin-left:635; margin-top:-35;">
                                   <li><a href="#">1</a></li>
                                   <li><a href="#">2</a></li>
@@ -267,7 +294,7 @@
                                   <li><a href="#">5</a></li>
                                   <li><a href="#">6</a></li>
                                   <li><a href="#">7</a></li>
-                                </ul>
+                                </ul>-->
                                 <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
                                 <script language="javascript">
                                     $(".dropdown-menu li a").click(function(){
@@ -275,7 +302,12 @@
                                     $(this).parents(".login1").find('.btn').val($(this).data('value'));
                                 });
                                 </script>
-                                <input type="text" placeholder="Preferred Duration" name="dur"><br>
+                                <input type="text" placeholder="Preferred Duration" name="dur">
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" value = "Order by" >
+                                    <option value="Order by">Order by</option>
+                                    <option value="Price">Price</option>
+                                    <option value="Flight Length">Flight Length</option>
+                                  </select><br>
                         </div>
                     </form>
                     <div class="align">
@@ -331,7 +363,7 @@
   </div>
 </div>
 
-<div class="container text-center">
+<!--<div class="container text-center">
         <div class="row">
             <div class="col-sm-8 col-md-6 col-lg-12">
                 <li class="dropdown">
@@ -350,7 +382,7 @@
                 </script>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <footer class="container-fluid text-center">
         <div class="row">
