@@ -24,11 +24,11 @@ app.post('/login', function(req, response) {
       if (err) {
         console.log (err.stack)
         done
+        response.sendFile('Web_design/login.html', {root: __dirname })
       } else{
         console.log(res.rows[0])
-        var check = res.rows[0]
         done
-        if (typeof(check) != "undefined"){
+        if (typeof(res.rows[0]) != "undefined"){
           email = req.body.email
           response.sendFile('Web_design/update_information.html', {root: __dirname })
         }
@@ -53,12 +53,19 @@ app.post('/myaction', function(req, response) {
       if (err) {
         console.log (err.stack)
         done
+        response.sendFile('Web_design/wsign_up.html', {root: __dirname })
       } else{
         console.log(res.rows[0])
         done
+        if (typeof(res.rows[0]) != "undefined"){
+          email = req.body.email
+          response.sendFile('Web_design/update_information.html', {root: __dirname })
+        }
+        else{
+          response.sendFile('Web_design/wsign_up.html', {root: __dirname })
+        }
       }
     })
-    response.sendFile('Web_design/update_information.html', {root: __dirname })
   })
 })
 
@@ -73,13 +80,19 @@ app.post('/updateInfo', function(req, response) {
       if (err) {
         console.log (err.stack)
         done
+        response.sendFile('Web_design/wupdate_information.html', {root: __dirname })
       } else{
         console.log(res.rows[0])
-        email = req.body.email
         done
+        if (typeof(res.rows[0]) != "undefined"){
+          email = req.body.email
+          response.sendFile('Web_design/update_information.html', {root: __dirname })
+        }
+        else{
+          response.sendFile('Web_design/wupdate_information.html', {root: __dirname })
+        }   
       }
     })
-    response.sendFile('Web_design/update_information.html', {root: __dirname })
   })
 })
   

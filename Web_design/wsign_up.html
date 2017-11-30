@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sign_up_Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+		@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+		body{
+			position:fixed;
+			overflow-y: scroll;
+			width:100%
+			top: -20px;
+			right: -40px;
+			bottom: -40px;
+			width:auto;
+			height: auto;
+			background-image: url("http://2.bp.blogspot.com/-7fpwx5RQ3dE/UO7T9J5zHxI/AAAAAAAADGI/tFBIV8ugTSc/s1600/taj+india+mahal++fine+hd+wallpaper.JPG");
+			background-size:cover;
+			-webkit-filter:blur(0px);
+		}
+
+		.head{
+			position: absolute;
+			top: calc(50% - 35px);
+			left: calc(50% - 255px);
+		}
+
+		.header div{
+			float: left;
+			color:#fff;
+			font-family: 'Exo', sans-serif;
+			font-size: 40px;
+			font-weight:200;
+			margin-top: -260%;
+			margin-left: -395%;
+		}
+
+		.header div span {
+			color:#F29E20 !important;
+		}
+
+		.footer div{
+			float: left;
+			color:#fff;
+			font-family: 'Exo', sans-serif;
+			font-size: 40px;
+			font-weight:200;
+			margin-top: -120%;
+			margin-left: -420%;
+		}
+
+		.footer div span {
+			color:#F29E20 !important;
+		}
+
+		.login{
+			position:absolute;
+			top: calc(50% - 490px);
+			left: calc(50% - 50px);
+			height:150px;
+			width:350px;
+			margin-left:-333%;
+			padding:10px;
+		}
+		.login1{
+			position:absolute;
+			top: calc(50% - 210px);
+			left: calc(50% - 50px);
+			height:150px
+			width:350px;
+			margin-left:-333%;
+			padding:10px;
+		}
+		.login input[type=text] {
+			width:250px;
+			height:30px;
+			background:transparent;
+			border:1px solid rgba(255,255,255,0.6);
+			border-radius:2px;
+			color:aqua;
+			font-size:16px;
+			font-weight:400;
+			padding:4px;
+		}
+		.login input[type=password] {
+			width:250px;
+			height:30px;
+			background:transparent;
+			border:1px solid rgba(255,255,255,0.6);
+			border-radius:2px;
+			color:aqua;
+			font-size:16px;
+			font-weight:400;
+			padding:4px;
+		}
+		.login input[type=button]{
+			width:260px;
+			height:35px;
+			background:#fff;
+			border:1px solid #fff;
+			cursor: pointer;
+			border-radius:2px;
+			color:#a18d6c;
+			font-family: 'Exo', sans-serif;
+			font-size:16px;
+			font-weight:400;
+			padding:6px;
+			margin-top: 10px;
+		}
+		.login input [type=button]:hover{
+			opactiy:0.8;
+		}
+		.login input [type=button]:active{
+			opactiy:0.6;
+		}
+		.login input [type=text]:focus{
+			outline:none;
+			border:1px solid rgba(255,255,255,0.9);
+		}
+		.login input[type=password]:focus{
+			outline:none;
+			border:1px solid rgba(255, 255, 255, 0.9);
+		}
+		.login input[type=button]:focus{
+			outline:none;
+		}
+		.login1 input[type=text] {
+			width:250px;
+			height:30px;
+			background:transparent;
+			border:1px solid rgba(255,255,255,0.6);
+			border-radius:2px;
+			color:aqua;
+			font-size:16px;
+			font-weight:400;
+			padding:4px;
+		}
+		.login1 input[type=password] {
+			width:250px;
+			height:30px;
+			background:transparent;
+			border:1px solid rgba(255,255,255,0.6);
+			border-radius:2px;
+			color:aqua;
+			font-size:16px;
+			font-weight:400;
+			padding:4px;
+		}
+		.login1 input[type=button]{
+			width:50px;
+			height:35px;
+			background:#fff;
+			border:1px solid #fff;
+			cursor: pointer;
+			border-radius:2px;
+			color:#a18d6c;
+			font-family: 'Exo', sans-serif;
+			font-size:16px;
+			font-weight:400;
+			padding:6px;
+			margin-top: 10px;
+			margin-left:-8%;
+		}
+		.login1 input [type=button]:hover{
+			opactiy:0.8;
+		}
+		.login1 input [type=button]:active{
+			opactiy:0.6;
+		}
+		.login1 input [type=text]:focus{
+			outline:none;
+			border:1px solid rgba(255,255,255,0.9);
+		}
+		.login1 input[type=password]:focus{
+			outline:none;
+			border:1px solid rgba(255, 255, 255, 0.9);
+		}
+		.login1 input[type=button]:focus{
+			outline:none;
+		}
+
+		::-webkit-input-placeholder{
+			color: rgba(255,255,255,0.6);
+		}
+		::-moz-input-placeholder{
+			color: rgba(255,255,255,0.6);
+		}
+	</style>
+</head>
+<body onecontextmenu="return false">
+        <script>
+            alert("POSTGRESS ERROR or Typed credentials are wrong!")
+            alert("Home Airport IATA has to be length 3 and make sure you haven't registered with this email before")
+        </script>
+	<div class="body"></div>
+	<div class="grad"></div>
+	<div class="header">
+		<div>Sign<span>Up</span></div>
+	</div>
+	<br>
+	<form action="http://127.0.0.1:8080/myaction" method="post">
+		<div class="login" >
+			<input type="text" placeholder="First Name" name="fname"><br>
+			<input type="text" placeholder="Last Name" name="lname"><br>
+			<input type="text" placeholder="Email" name="email"><br>
+			<input type="text" placeholder="Address" name="add"><br>
+			<input type="text" placeholder="Home Aiport IATA" name="hiata"><br>
+			<input type="submit" value="Sign Up Now"/>
+		</div>
+	</form>
+	<div class="footer" style="visibility: hidden">
+		<div>Credit<span>Info</span></div>
+	</div>
+	<!--<br>
+	<form name="login1">
+		<div class="login1">
+			<ul>
+				<input type="text" placeholder="Credit Card Number" name="credit">
+				<input type="text" placeholder="Billing Address" name="badd"><br>
+				<input id="btnAdd1" type="button" onclick="check(this.form)" value="Add"/>
+			</ul>
+		</div>
+	</form>
+	<script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+	<script language="javascript">
+		$(document).ready(function() {
+			$('#btnAdd1').on('click', function() {
+				var input_item = '<input type="text" placeholder="Credit Card Number" name="credit"><input type="text" placeholder="Billing Address" name="badd">';
+				$('ul').append(input_item);
+			});
+		});
+	</script>-->
+</body>
+</html>
