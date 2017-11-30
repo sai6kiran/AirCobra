@@ -37,23 +37,32 @@ app.post('/myaction', function(req, response) {
   });
 });
 
-
 app.get('/youraction', function(req, res){
+  console.log("IM HERE");
   client.connect();
-  var query = client.query("SELECT email,firstname FROM customer WHERE customer.email = 'saikiran@hawk.iit.edu' AND customer.firstname = 'Sai'", function(err, res) {
-      if(err) console.log(err);
-      else console.log("Logged In");
+  text = "SELECT email,firstname FROM customer WHERE customer.email = $1 AND customer.firstname = $2";
+  values = ['test1@test.com','dingu'];
+  client.query(text, values, (err, res) => {
+    if (err) {
+      console.log (err.stack);
+    } else{
+      console.log(res.rows[1]);
+    }
   });
-  client.end();
+  /*var query = client.query("SELECT email,firstname FROM customer WHERE customer.email = 'test1@test.com' AND customer.firstname = 'dingus'")
+  query.on("row", function(row, result) {
+      result.addRow(row);
+  });
+  console.log("IM HERE");
+  query.on("end", function(result) {
+    var a = JSON.stringify(result.rows, null, "   ");
+    if(a[1] == ']')
+      console.log("Not there");
+    else 
+      console.log(a);
+    client.end();
+  });*/
 });
-
-/*var constring = 'postgres://postgres:4jw3np4h@localhost:8888/mydb';
-pg.connect(conString, function(err, client) {
-    // Use the client to do things here
-  });
-    client.query("INSERT INTO table(a,b,c,d) value('a','b','c','d')");
-
-var query = client.query("SELECT * FROM table");*/
     app.listen(8080, function() {
     console.log('Server running at http://127.0.0.1:8080/');
   });
