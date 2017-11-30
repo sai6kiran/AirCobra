@@ -276,39 +276,37 @@
 		<div>Update<span>Info</span></div>
 	</div>
 	<br>
-	<form name="login">
+	<form action="http://127.0.0.1:8080/updateInfo" method="post">
 		<div class="login">
 			<input type="text" placeholder="First Name" name="fname"><br>
 			<input type="text" placeholder="Last Name" name="lname"><br>
 			<input type="text" placeholder="Email" name="email"><br>
 			<input type="text" placeholder="Address" name="add"><br>
-			<input type="text" placeholder="Username" name="userid"><br>
-			<input type="password" placeholder="Password" name="pswrd"><br>
-			<input type="button" onclick="check(this.form)" value="Update Info"/>
+			<input type="text" placeholder="Home Aiport IATA" name="hiata"><br>
+			<input type="submit" value="Update Info"/>
 		</div>
 	</form>
 	<div class="footer1">
 		<div>Delete<span>Info</span></div>
 	</div>
 	<br>
-	<form name="login2">
+	<form action="http://127.0.0.1:8080/deleteCredit" method="post">
 		<div class="login2">
-				<input type="password" placeholder="Credit Card Number" name="credit">
+				<input type="text" placeholder="Credit Card Number" name="credit">
 				<input type="text" placeholder="Billing Address" name="dbadd">
-				<input type="text" placeholder="Address" name="dadd"><br>
-				<input id="btnAdd2" type="button" onclick="check(this.form)" value="Delete"/>
+				<input type="submit" value="Delete"/>
 		</div>
 	</form>
 	<div class="footer">
 		<div>Credit<span>Info</span></div>
 	</div>
 	<br>
-	<form name="login1">
+	<form action="http://127.0.0.1:8080/addCredit" method="post">
 		<div class="login1">
 			<ul>
-				<input type="password" placeholder="Credit Card Number" name="credit">
+				<input type="text" placeholder="Credit Card Number" name="credit">
 				<input type="text" placeholder="Billing Address" name="badd"><br>
-				<input id="btnAdd1" type="button" onclick="check(this.form)" value="Add"/>
+				<input type="submit" value="Add Credit"/>
 			</ul>
 		</div>
 	</form>
