@@ -1,0 +1,18 @@
+NONSTOP -- select * from flight
+		where flight.iata ='ORD' and flight.diata = 'DFW'
+
+ONE CONNECTION -- select * from 
+			flight as a1 join flight on a1.diata = flight.iata
+			where a1.iata ='JFK' 
+			and flight.diata = 'DFW' 
+			and a1.ddate < flight.date 
+			and a1.dtime < flight.time
+
+TWO CONNECTIONS -- select * from 
+			flight as a1 join flight as a2 on a1.diata = a2.iata join flight on a2.diata = flight.iata
+			where a1.iata = 'ORD' 
+			and flight.diata = 'DFW' 
+			and a1.ddate <= a2.date 
+			and a2.ddate <= flight.date 
+			and a1.dtime < a2.time 
+			and a2.dtime < flight.time
