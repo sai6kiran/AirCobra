@@ -1,5 +1,12 @@
-NONSTOP -- select * from flight
-		where flight.iata ='ORD' and flight.diata = 'DFW'
+NONSTOP FLIGHT SMALLEST TIME PER DATE AND AIRPORT -- 
+select a2.date, a2.flightnumber, a2.airlinecode, min(a2.diff) as smallest from 
+	(select date, airlinecode, flightnumber, case 
+		when a1.diff < '00:00' then a1.diff + '24:00'
+		else a1.diff
+		END
+		from (select date, airlinecode, flightnumber, dtime - time as diff 
+				from flight where iata ='ATL' and diata = 'ORD' and date = '2017-12-12') as a1) as a2
+				group by airlinecode, flightnumber, date order by smallest
 
 ONE CONNECTION -- select * from 
 			flight as a1 join flight on a1.diata = flight.iata
