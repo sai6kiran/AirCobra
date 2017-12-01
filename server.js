@@ -1,8 +1,6 @@
 var express = require('express')
 var app     = express()
 var http = require('http')
-var flag = -1
-var q = require('q')
 app.use(express.static(__dirname + '/Web_design'));
 
 var bodyParser = require('body-parser')
