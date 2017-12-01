@@ -1,5 +1,5 @@
 var express = require('express')
-var app     = express()
+var app = express()
 var http = require('http')
 app.use(express.static(__dirname + '/Web_design'));
 
