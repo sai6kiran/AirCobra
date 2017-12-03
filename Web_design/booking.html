@@ -206,21 +206,17 @@
             <div class="item active">
                 <img src="canada-lake-feb.jpg" width="1500" >
                 <div class="carousel-caption">
-                    <form name="login1">
+                    <form action="http://127.0.0.1:8080/booking" method="POST">
                         <div class="login1">
                                 <input type="text" placeholder="From : Departure" name="credit">
                                 <input type="date" placeholder="Departure Date" name="dep">
                                 <input type="text" placeholder="To : Arrival" name="badd">
                                 <input type="date" placeholder="Return Date" name="ret">
-                                <select id="mySelect"  class="btn btn-default dropdown-toggle" value = "Limit of Connections" >
+                                <select id="mySelect"  class="btn btn-default dropdown-toggle" name = "conn" value = "Limit of Connections" >
                                     <option value="Limit of Connections">Limit of Connections</option>
+                                    <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
                                   </select>
                                <!-- <input id=" noc" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" value="No. of Connections" name="con" ><span class="caret"></span>
                                 <ul class="dropdown-menu" id="dropdown" style="margin-left:635; margin-top:-35;">
@@ -239,21 +235,30 @@
                                     $(this).parents(".login1").find('.btn').val($(this).data('value'));
                                 });
                                 </script>
-                                <input type="text" placeholder="Preferred Duration" name="dur">
+                                <input type="text" placeholder="Time Limit (hours)" name="dur">
                                 <input type="text" placeholder="Preferred Price" name="dep">
                                 <select id="mySelect"  class="btn btn-default dropdown-toggle" value = "Order by" >
                                     <option value="Order by">Order by</option>
                                     <option value="Price">Price</option>
                                     <option value="Flight Length">Flight Length</option>
                                   </select>
-                                <br>
+                                <div class="align1">
+                                    <input  class="btn btn-default" type="submit" value="Search Flights" onclick="validateF(this.form);"/>
+                                </div>
                         </div>
                     </form>
+                    <script>
+                        function validateF(iform){
+                            alert("Hey" );
+                          }
+                        /*$('.my_selector').click(function(){
+                            $.get('http://127.0.0.1:8080/booking', {}, function(data){
+                                console.log(booking)
+                            });
+                        });*/
+                    </script>
                     <div class="align">
                     <a href="https://www.google.com/maps"><button type="button" class="btn btn-default">Map</button></a>
-                    </div>
-                    <div class="align1">
-                    <a href="login.html"><button type="button" class="btn btn-default" href="login.html">Search Flights</button></a>
                     </div>
                 </div>
             </div>  <!---End Active -->

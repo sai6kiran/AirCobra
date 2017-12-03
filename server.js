@@ -11,37 +11,45 @@ var conString = "postgres://postgres:postgres@localhost:5432/AirCobra"
 var client = new pg.Client(conString)
 var email = ''
 
+app.get('/', function(req, response) {
+  response.sendFile('Web_design/i.html', {root: __dirname });
+});
+
 app.get('/sign_up.html', function(req, response){
   response.sendFile('Web_design/sign_up.html', {root: __dirname });
-});
+})
 
 app.get('/wsign_up.html', function(req, response){
   response.sendFile('Web_design/wsign_up.html', {root: __dirname });
-});
+})
 
 app.get('/login.html', function(req, response){
   response.sendFile('Web_design/login.html', {root: __dirname });
-});
+})
 
 app.get('/wlogin.html', function(req, response){
   response.sendFile('Web_design/wlogin.html', {root: __dirname });
-});
+})
 
 app.get('/booking.html', function(req, response){
   response.sendFile('Web_design/booking.html', {root: __dirname });
-});
+})
 
 app.get('/update_information.html', function(req, response){
   response.sendFile('Web_design/update_information.html', {root: __dirname });
-});
+})
 
 app.get('/wupdate_information.html', function(req, response){
   response.sendFile('Web_design/wupdate_information.html', {root: __dirname });
-});
+})
+
+app.get('/booking', function(req, response){
+  console.log("here");
+})
 
 app.get('/i.html', function(req, response){
   response.sendFile('Web_design/i.html', {root: __dirname });
-});
+})
 
 app.post('/login', function(req, response) {
   pg.connect(conString, function (err, client, done) {
@@ -168,6 +176,40 @@ app.post('/addCredit', function(req, response) {
     response.sendFile('Web_design/update_information.html', {root: __dirname })
   })
 })
-  app.listen(8080, function() {
-  console.log('Server running at http://127.0.0.1:8080/');
-});
+
+app.post('/booking', function(req, response) {
+  pg.connect(conString, function (err, client, done) {
+    if (err) {
+      return console.error('could not connect to postgres', err)
+    } 
+    var credit = parseInt(req.body.credit);
+    const tex = 'select a2.date, a2.flightnumber, a2.airlinecode, min(a2.diff) as smallest from (select date, airlinecode, flightnumber, case when a1.diff < $1 then a1.diff + $2 else a1.diff END from (select date, airlinecode, flightnumber, dtime - time as diff from flight where iata = $3 and diata = $4 and date = $5) as a1) as a2 group by airlinecode, flightnumber, date order by smallest'
+    const value = ['00:00','24:00','ATL','ORD','2017-12-12']
+    email = req.body.email
+    client.query(tex, value, (err, res) => {
+      if (err) {
+        console.log (err.stack)
+        done
+      } else{
+        if (typeof(res.rows[0]) != "undefined"){
+          for(var i = 0; i < res.rows.length; i++){
+            console.log(res.rows[i])
+          }
+          //response.json(res.rows)
+          return;
+        }
+        else{
+          var i = 0
+          while(i < rows.length()){
+            console.log(res.rows[i])
+            response.send(res.rows[0])
+          }
+        }
+      }
+    })
+  })
+})
+  
+app.listen(8080, function(){
+console.log('Server running at http://127.0.0.1:8080/');
+})
