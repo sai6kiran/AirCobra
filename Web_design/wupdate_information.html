@@ -85,7 +85,7 @@
 			position:absolute;
 			top: calc(50% - 210px);
 			left: calc(50% - 50px);
-			height:150px
+			height:150px;
 			width:350px;
 			margin-left:-290%;
 			padding:10px;
@@ -94,7 +94,7 @@
 			position:absolute;
 			top: calc(50% - 370px);
 			left: calc(50% - 50px);
-			height:150px
+			height:150px;
 			width:350px;
 			margin-left:-270%;
 			padding:10px;
@@ -270,11 +270,11 @@
 	</style>
 </head>
 <body onecontextmenu="return false">
-    <script>
-        alert("POSTGRESS ERROR or Typed credentials are wrong!")
-        alert("Home Airport IATA has to be length 3, make sure you haven't registered with the new email before, creditcard number has to be number, can't delete a non existing credit card number and add an exsisting creditcard")
-        alert("If you want to update a credit card address, delete the credit card and add the credit card")
-    </script>
+		<script>
+				alert("POSTGRESS ERROR or Typed credentials are wrong!")
+				alert("Home Airport IATA has to be length 3, make sure you haven't registered with the new email before, creditcard number has to be number, can't delete a non existing credit card number and add an exsisting creditcard")
+				alert("If you want to update a credit card address, delete the credit card and add the credit card")
+			</script>
 	<div class="body"></div>
 	<div class="grad"></div>
 	<div class="header">
@@ -312,6 +312,12 @@
 				<input type="text" placeholder="Credit Card Number" name="credit">
 				<input type="text" placeholder="Billing Address" name="badd"><br>
 				<input type="submit" value="Add Credit"/>
+				<br><br><br>
+				<button><a href="i.html">Home</a></li></button>
+				<li><a href="booking.html">Book Flights</a></li>
+				<button><a href="update_information.html">Update Information</a></li></button>
+				<li class = "active" ><form action="http://127.0.0.1:8080/manage" method="POST"><input type="submit" class="btn btn-default" value="Manage Bookings" name="Manage Bookings"></form></li>
+				<button><a href="booking.html">Book Flights</a></li></button>
 			</ul>
 		</div>
 	</form>
@@ -324,5 +330,6 @@
 			});
 		});
 	</script>
+	
 </body>
 </html>

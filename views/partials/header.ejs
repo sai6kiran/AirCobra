@@ -1,0 +1,27 @@
+<!-- views/partials/header.ejs -->
+
+<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="logo">
+                    <a class="navbar-brand" href="#"><img src="ai.png"></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="i.html">Home</a></li>
+                    <li><a href="booking.html">Book Flights</a></li>
+                    <li><a href="update_information.html">Update Information</a></li>
+                    <li class = "active" ><form action="http://127.0.0.1:8080/manage" method="POST"><input type="submit" class="btn btn-default" value="Manage Bookings" name="Manage Bookings"></form></li>
+                    <li><a href="https://www.skyscanner.com/hotels?na=1&sd=2017-11-28&ed=2017-11-29">Cheap Hotels</a></li>
+                    <li><a href="https://www.skyscanner.com/car-rental/?pick_up_date=2017-11-28">Car Rental</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>

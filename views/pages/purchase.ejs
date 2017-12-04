@@ -1,0 +1,41 @@
+<!-- views/pages/purchase.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <form action="http://127.0.0.1:8080/bookc" method="POST">
+            <h2>The following are your available credit card number(s) and chosen flight information</h2>
+            <ul>
+                    <% drinks.forEach(function(drink) { %>
+                        <li><%= drink.cnumber %></li>
+                    <% }); %>
+            </ul>
+            <h2>Chosen Airline(s)</h2>
+            <p><%= airline %></p>
+            <h2>Chosen Flight(s)</h2>
+            <p><%= flight %></p>
+            <h2>Chosen Class(s)</h2>
+            <p><%= cl %></p>
+            <text >Choose a credit card by entering it or go to update information to add a credit card</text><br>
+            <text class="btn btn-default">Credit Card Number</text><input type="text" placeholder="Credit Card Number" name="ac"><br>
+            <input class="btn btn-default" type="submit" value="Purchase" name="check"/>
+        </form>
+    </div>
+</main>
+
+<footer class="container-fluid text-center">
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

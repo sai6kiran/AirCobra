@@ -1,0 +1,108 @@
+<!-- views/pages/booking3.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>2 CONNECTION </h1>
+        <p>Please enter flight(s) or go back to enter new criteria</p>
+        <form action="http://127.0.0.1:8080/book0" method="POST">
+        <table>
+            <tr>
+                <th>Airplane1 Code</th>
+                <th>Flight1 Number</th>
+                <th>Available1 Seats</th>
+                <th>Departure1 Airport</th>
+                <th>Destination1 Airport</th>
+                <th>Departure1 Time</th>
+                <th>Arival1 Time</th>
+                <th>Price1</th>
+                <th>Total Travel Time</th>
+                <th>Total Price</th>
+                <th>Travel Class</th>
+            </tr>
+            <% drinks.forEach(function(drink) { %>
+                <tr>
+                    <td><%= drink.ac1 %></td>
+                    <td><%= drink.fn1 %></td>
+                    <th><%= drink.seat1 %></th>
+                    <td><%= drink.iata1 %></td>
+                    <td><%= drink.diata1 %></td>
+                    <td><%= drink.dtime1 %></td>
+                    <td><%= drink.atime1 %></td>
+                    <td><%= drink.price1 %></td>
+                    <td><%= drink.duration %></td>
+                    <td><%= drink.tprice %></td>
+                    <td><%= drink.class %></td>
+                </tr>
+            <% }); %>
+            <tr>
+                <th>Airplane2 Code</th>
+                <th>Flight2 Number</th>
+                <th>Available2 Seats</th>
+                <th>Departure2 Airport</th>
+                <th>Destination2 Airport</th>
+                <th>Departure2 Time</th>
+                <th>Arival2 Time</th>
+                <th>Price2</th>
+            </tr>
+            <% drinks.forEach(function(drink) { %>
+                <tr>
+                    <td><%= drink.ac2 %></td>
+                    <td><%= drink.fn2 %></td>
+                    <th><%= drink.seat2 %></th>
+                    <td><%= drink.iata2 %></td>
+                    <td><%= drink.diata2 %></td>
+                    <td><%= drink.dtime2 %></td>
+                    <td><%= drink.atime2 %></td>
+                    <td><%= drink.price2 %></td>
+                </tr>
+            <% }); %>
+            <tr>
+                <th>Airplane3 Code</th>
+                <th>Flight3 Number</th>
+                <th>Available3 Seats</th>
+                <th>Departure3 Airport</th>
+                <th>Destination3 Airport</th>
+                <th>Departure3 Time</th>
+                <th>Arival3 Time</th>
+                <th>Price3</th>
+            </tr>
+            <% drinks.forEach(function(drink) { %>
+                <tr>
+                    <td><%= drink.ac3 %></td>
+                    <td><%= drink.fn3 %></td>
+                    <th><%= drink.seat3 %></th>
+                    <td><%= drink.iata3 %></td>
+                    <td><%= drink.diata3 %></td>
+                    <td><%= drink.dtime3 %></td>
+                    <td><%= drink.atime3 %></td>
+                    <td><%= drink.price3 %></td>
+                </tr>
+            <% }); %>
+        </table>
+        <br>
+            <input type="text" value = '3' style = "visibility: hidden" name="c"><br>
+            <text class="btn btn-default">Airlinecode,...</text><input type="text" placeholder="Airlinecode,..." name="ac"><br>
+            <text class="btn btn-default">Flightnumber,...</text><input type="text" placeholder="Flightnumber,..." name="fn"><br>
+            <text class="btn btn-default">Class:F/E</text><input type="text" placeholder="Class:F/E" name="cl"><br>
+            <input  class="btn btn-default" type="submit" value="MakePayment" name="check"/>
+        </form>
+    </div>
+</main>
+
+<footer class="container-fluid text-center">
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

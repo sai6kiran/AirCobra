@@ -1,0 +1,48 @@
+<!-- views/pages/manage.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Manage Bookings </h1>
+        <form action="http://127.0.0.1:8080/deletebooking" method="POST">
+        <table>
+            <tr>
+                <th>Booking Number</th>
+                <th>Airline Code</th>
+                <th>Flight Number</th>
+                <th>Travel Class</th>
+                <th>Credit Card Used</th>
+            </tr>
+            <% drinks.forEach(function(drink) { %>
+                <tr>
+                    <td><%= drink.bn %></td>
+                    <td><%= drink.ac %></td>
+                    <th><%= drink.fl %></th>
+                    <td><%= drink.se %></td>
+                    <td><%= drink.cn %></td>
+                </tr>
+            <% }); %>
+        </table>
+        <h1>Delete booking</h1>
+            <text class="btn btn-default">Booking Number</text><input type="text" placeholder="Booking Number" name="bn"><br>
+            <input  class="btn btn-default" type="submit" value="Delete Booking" name="check"/>
+        </form>
+    </div>
+</main>
+
+<footer class="container-fluid text-center">
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!-- views/partials/head.ejs -->
+<meta charset="UTF-8">
+<title>Booking Result</title>
+
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+        .logo img {
+            height:100px;
+            float:left;
+            margin-top: -20px;
+        }
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            color: #FFF;
+            padding: 0.6% 0;
+            border:0;
+        }
+        .navbar-brand {
+            float:left;
+            min-height: 60px;
+            padding: 0 10px 5px;
+        }
+        .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover {
+            color:#FFF;
+        }
+        .navbar-inverse .navbar-nav li a {
+            color: #D5D5D5;
+        }
+        .navbar li a:hover {
+        color:aqua !important;
+        border-bottom: 0.3px solid #e67e22;
+        transition: all 500ms ease-in-out;
+        }
+        .carousel-caption {
+            top:57%;
+            transform: translateY(-50%);
+            text-transform: uppercase;
+        }
+        .btn{
+            font-size: 18px;
+            color:#FFF;
+            background-color: black;
+            border: 2px solid #FFF;
+        }
+        .align {
+            margin-top: 15%;
+            margin-left: -80%;
+        }
+        .align1 {
+            margin-left:80%;
+            margin-top: -5%;
+        }
+        .container {
+            margin: 2% auto;
+        }
+        footer{
+            width: 100%;
+            background-color:black;
+            padding:0.3%;
+            color:#FFF;
+        }
+        .fa {
+            padding: 20px;
+            font-size: 20px;
+            margin-top: -14%;
+        }
+        .fa:hover {
+            text-decoration: none;
+        }
+        @media (max-width: 900px) {
+            .fa{
+                font-size: 20px;
+                padding: 14px;
+                margin-top: -24%;
+            }
+        }
+
+        .login1{
+            position:absolute;
+            top: calc(50% - 150px);
+            left: calc(50% - 50px);
+            height:150px
+            width:350px;
+            margin-left:-50%;
+            padding:10px;
+        }
+        .login1 input[type=text] {
+            width:150px;
+            height:30px;
+            background:transparent;
+            border:1px solid rgba(255,255,255,0.6);
+            border-radius:2px;
+            color:aqua;
+            font-size:16px;
+            font-weight:400;
+            padding:4px;
+        }
+        .login1 input[type=password] {
+            width:150px;
+            height:30px;
+            background:transparent;
+            border:1px solid rgba(255,255,255,0.6);
+            border-radius:2px;
+            color:aqua;
+            font-size:16px;
+            font-weight:400;
+            padding:4px;
+        }
+        .login1 input[type=date] {
+            width:137px;
+            height:30px;
+            background:transparent;
+            border:1px solid rgba(255,255,255,0.6);
+            border-radius:2px;
+            color:aqua;
+            font-size:16px;
+            font-weight:400;
+            padding:4px;
+        }
+        .login1 input[type=button]{
+            width:150px;
+            height:30px;
+            background:transparent;
+            border:1px solid #fff;
+            cursor: pointer;
+            border-radius:2px;
+            color:aqua;
+            font-family: 'Exo', sans-serif;
+            font-size:16px;
+            font-weight:400;
+            padding:6px;
+            margin-top: -5px;
+            margin-left:0%;
+        }
+        .login1 input [type=button]:hover{
+            opactiy:0.8;
+        }
+        .login1 input [type=button]:active{
+            opactiy:0.6;
+        }
+        .login1 input [type=text]:focus{
+            outline:none;
+            border:1px solid rgba(255,255,255,0.9);
+        }
+        .login1 input[type=password]:focus{
+            outline:none;
+            border:1px solid rgba(255, 255, 255, 0.9);
+        }
+        .login1 input[type=button]:focus{
+            outline:none;
+        }
+        ::-webkit-input-placeholder{
+            color: rgba(255,255,255,0.6);
+        }
+        ::-moz-input-placeholder{
+            color: rgba(255,255,255,0.6);
+        }
+
+    </style>
