@@ -56,13 +56,13 @@ app.get('/wbooking.html', function(req, response){
   response.sendFile('Web_design/wbooking.html', {root: __dirname });
 })
 
-app.get('/update_information.html', function(req, response){
+/*app.get('/update_information.html', function(req, response){
   response.sendFile('Web_design/update_information.html', {root: __dirname });
 })
 
 app.get('/wupdate_information.html', function(req, response){
   response.sendFile('Web_design/wupdate_information.html', {root: __dirname });
-})
+})*/
 
 app.get('/i.html', function(req, response){
   response.sendFile('Web_design/i.html', {root: __dirname });
@@ -136,16 +136,16 @@ app.post('/updateInfo', function(req, response) {
       if (err) {
         console.log (err.stack)
         done
-        response.sendFile('Web_design/wupdate_information.html', {root: __dirname })
+        response.sendFile('Web_design/wbooking.html', {root: __dirname })
       } else{
         console.log(res.rows[0])
         done
         if (typeof(res.rows[0]) != "undefined"){
           email = req.body.email
-          response.sendFile('Web_design/update_information.html', {root: __dirname })
+          response.sendFile('Web_design/abooking.html', {root: __dirname })
         }
         else{
-          response.sendFile('Web_design/wupdate_information.html', {root: __dirname })
+          response.sendFile('Web_design/wbooking.html', {root: __dirname })
         }   
       }
     })
@@ -164,12 +164,13 @@ app.post('/deleteCredit', function(req, response) {
       if (err) {
         console.log (err.stack)
         done
+        response.sendFile('Web_design/wbooking.html', {root: __dirname })
       } else{
         console.log(res.rows[0])
         done
       }
     })
-    response.sendFile('Web_design/update_information.html', {root: __dirname })
+    response.sendFile('Web_design/abooking.html', {root: __dirname })
   })
 })
 
@@ -185,12 +186,13 @@ app.post('/addCredit', function(req, response) {
       if (err) {
         console.log (err.stack)
         done
+        response.sendFile('Web_design/wbooking.html', {root: __dirname })
       } else{
         console.log(res.rows[0])
         done
       }
     })
-    response.sendFile('Web_design/update_information.html', {root: __dirname })
+    response.sendFile('Web_design/abooking.html', {root: __dirname })
   })
 })
 
@@ -330,7 +332,7 @@ app.post('/deletebooking', function(req, response) {
   })
 })
 
-app.post('/manage', function(req, response){
+app.get('/manage', function(req, response){
   pg.connect(conString, function (err, client, done) {
     if (err) {
       return console.error('could not connect to postgres', err)
@@ -361,6 +363,55 @@ app.post('/manage', function(req, response){
   })
 })
 
+app.get('/update', function(req, response){
+  pg.connect(conString, function (err, client, done) {
+    if (err) {
+      return console.error('could not connect to postgres', err)
+    } 
+    var text4 = 'SELECT customer.firstname as f,customer.lastname as l,customer.address as a,customer.hiata as h FROM customer where email = $1'
+    var values4 = [email]
+    var result2 = []
+    var result = []
+    var text = 'SELECT (creditcard.creditcardnumber) as cn, (creditcard.paymentaddress) as add FROM creditcard WHERE email = $1'
+    client.query(text4, values4, (err, res) => {
+      if (err) {
+        console.log (err.stack)
+        response.sendFile('Web_design/wbooking.html', {root: __dirname })
+        done
+      } else{
+        console.log(res.rows[0])
+        for(i = 0; i < res.rows.length; i++){
+          result.push({
+            fn : res.rows[i].f,
+            ln : res.rows[i].l,
+            hi : res.rows[i].h,
+            em : email,
+            ad : res.rows[i].a,
+          })
+        }
+        console.log(result)
+      }
+    })
+    client.query(text, values4, (err, res) => {
+      if (err) {
+        console.log (err.stack)
+        response.sendFile('Web_design/wbooking.html', {root: __dirname })
+        done
+      } else{
+        console.log(res.rows[0])
+        for(i = 0; i < res.rows.length; i++){
+          result2.push({
+            cnumber : res.rows[i].cn,
+            pa : res.rows[i].add
+          })
+        }
+        console.log(result)
+        response.render('pages/update',{drinks : result, 
+          drinks2 : result2})
+      }
+    })
+  })
+})
 
 app.post('/booking', function(req, response) {
   var test = 'Economy Class'

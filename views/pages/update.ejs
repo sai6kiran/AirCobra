@@ -1,0 +1,78 @@
+<!-- views/pages/udpdate.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Update Info</h1>
+        <h2>Personal Info</h2>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Home Address</th>
+            </tr>
+            <% drinks.forEach(function(drink) { %>
+                <tr>
+                    <td><%= drink.fn %></td>
+                    <td><%= drink.ln %></td>
+                    <th><%= drink.em %></th>
+                    <td><%= drink.ad %></td>
+                    <td><%= drink.hi %></td>
+                </tr>
+            <% }); %>
+        </table>
+        <h2>Credit Info</h2>
+        <table>
+            <tr>
+                <th>Credit Card</th>
+                <th>Payment Address</th>
+            </tr>
+            <% drinks2.forEach(function(drink) { %>
+                <tr>
+                    <td><%= drink.cnumber %></td>
+                    <td><%= drink.pa %></td>
+                </tr>
+            <% }); %>
+        </table>
+        <h2>Update Information Personal Info (Please fill all fields)</h2>
+        <form action="http://127.0.0.1:8080/updateInfo" method="post">
+            <text>First Name</text><input type="text" placeholder="First Name" name="fname"><br>
+            <text>Last Name</text><input type="text" placeholder="Last Name" name="lname"><br>
+            <text>Email</text><input type="text" placeholder="Email" name="email"><br>
+            <text>Address</text><input type="text" placeholder="Address" name="add"><br>
+            <text>Home Aiport IATA</text><input type="text" placeholder="Home Aiport IATA" name="hiata"><br>
+            <input type="submit" value="Update Personal Info"/>
+        </form>
+        <h2>Add Credit Info (Please fill all fields)</h2>
+        <form action="http://127.0.0.1:8080/addCredit" method="post">
+            <text>Credit Card Number</text><input type="text" placeholder="Credit Card Number" name="credit">
+            <text>Billing Address</text><input type="text" placeholder="Billing Address" name="badd"><br>
+            </text><input type="submit" value="Add Credit"/>
+        </form>
+        <h2>Delete Credit Info (Please fill all fields)</h2>
+        <form action="http://127.0.0.1:8080/deleteCredit" method="post">
+            <text>Credit Card Number</text><input type="text" placeholder="Credit Card Number" name="credit">
+            <text>Billing Address</text><input type="text" placeholder="Billing Address" name="dbadd">
+            <input type="submit" value="Delete Credit"/>
+        </form>
+    </div>
+</main>
+
+<footer class="container-fluid text-center">
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
