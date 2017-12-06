@@ -27,7 +27,12 @@
             <h2>Chosen Class(s)</h2>
             <p><%= cl %></p>
             <text >Choose a credit card by entering it or go to update information to add a credit card</text><br>
-            <text class="btn btn-default">Credit Card Number</text><input type="text" placeholder="Credit Card Number" name="ac"><br>
+            <text class="btn btn-default">Credit Card Number</text>
+            <select id="mySelect"  class="btn btn-default dropdown-toggle" name = "ac" value = "Limit of Connections" >
+                    <% drinks.forEach(function(drink) { %>
+                        <option value= <%= drink.cnumber %> ><%= drink.cnumber %></option>
+                    <% }); %>
+              </select><br>
             <input class="btn btn-default" type="submit" value="Purchase" name="check"/>
         </form>
     </div>

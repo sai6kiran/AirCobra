@@ -29,6 +29,7 @@
                 <th>Total Travel Time</th>
                 <th>Total Price</th>
                 <th>Travel Class</th>
+                <th></th>
             </tr>
             <% drinks.forEach(function(drink) { %>
                 <tr>
@@ -43,6 +44,7 @@
                     <td><%= drink.duration %></td>
                     <td><%= drink.tprice %></td>
                     <td><%= drink.class %></td>
+                    <td><input type="text" style = "visibility: hidden" name="cl" value = <%= drink.class %>></td>
                 </tr>
             <% }); %>
             <tr>
@@ -54,6 +56,10 @@
                 <th>Departure2 Time</th>
                 <th>Arival2 Time</th>
                 <th>Price2</th>
+                <th>Total Travel Time</th>
+                <th>Total Price</th>
+                <th>Travel Class</th>
+                <th>Book</th>
             </tr>
             <% drinks.forEach(function(drink) { %>
                 <tr>
@@ -65,14 +71,14 @@
                     <td><%= drink.dtime2 %></td>
                     <td><%= drink.atime2 %></td>
                     <td><%= drink.price2 %></td>
-                </tr>t
+                    <td><%= drink.duration %></td>
+                    <td><%= drink.tprice %></td>
+                    <td><%= drink.class %></td>
+                    <td><button class="btn btn-default" type="submit" name="ac" value= <%= drink.fn1+","+drink.fn2+"."+drink.ac1+","+drink.ac2 %> >Select</button></td>
+                </tr>
             <% }); %>
         </table>
-            <input type="text" value = '1' style = "visibility: hidden" name="c"><br>
-            <text class="btn btn-default">Airlinecode,...</text><input type="text" placeholder="Airlinecode,..." name="ac"><br>
-            <text class="btn btn-default">Flightnumber,...</text><input type="text" placeholder="Flightnumber,..." name="fn"><br>
-            <text class="btn btn-default">Class:F/E</text><input type="text" placeholder="Class:F/E" name="cl"><br>
-            <input  class="btn btn-default" type="submit" value="MakePayment" name="check"/>
+            <input type="text" value = '1' style = "visibility: hidden" name="c">
         </form>
     </div>
 </main>

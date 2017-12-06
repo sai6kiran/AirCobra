@@ -28,6 +28,7 @@
                 <th>Destination Airport</th>
                 <th>Departure Time</th>
                 <th>Arival Time</th>
+                <th>Book</th>
             </tr>
             <% drinks.forEach(function(drink) { %>
                 <tr>
@@ -41,14 +42,12 @@
                     <td><%= drink.diata %></td>
                     <td><%= drink.dtime %></td>
                     <td><%= drink.atime %></td>
+                    <td><button class="btn btn-default" type="submit" name="ac" value= <%= drink.fn+"."+drink.ac %> >Select</button></td>
                 </tr>
+                <input type="text" style = "visibility: hidden" name="cl" value = <%= drink.class %>>
             <% }); %>
         </table>
-            <input type="text" value = '1' style = "visibility: hidden" name="c"><br>
-            <text class="btn btn-default">Airlinecode,...</text><input type="text" placeholder="Airlinecode,..." name="ac"><br>
-            <text class="btn btn-default">Flightnumber,...</text><input type="text" placeholder="Flightnumber,..." name="fn"><br>
-            <text class="btn btn-default">Class:F/E</text><input type="text" placeholder="Class:F/E" name="cl"><br>
-            <input  class="btn btn-default" type="submit" value="MakePayment" name="check"/>
+            <input type="text" value = '0' style = "visibility: hidden" name="c"><br>
         </form>
     </div>
 </main>

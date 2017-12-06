@@ -56,14 +56,6 @@ app.get('/wbooking.html', function(req, response){
   response.sendFile('Web_design/wbooking.html', {root: __dirname });
 })
 
-/*app.get('/update_information.html', function(req, response){
-  response.sendFile('Web_design/update_information.html', {root: __dirname });
-})
-
-app.get('/wupdate_information.html', function(req, response){
-  response.sendFile('Web_design/wupdate_information.html', {root: __dirname });
-})*/
-
 app.get('/i.html', function(req, response){
   response.sendFile('Web_design/i.html', {root: __dirname });
 })
@@ -196,11 +188,14 @@ app.post('/addCredit', function(req, response) {
   })
 })
 
+
 app.post('/book0', function(req, response){
-  airline = req.body.ac
-  flight = req.body.fn
+  var temp2 = req.body.ac
+  var temp = temp2.split('.')
+  airline = temp[1].toString()
+  flight = temp[0].toString()
   size = req.body.c
-  if(req.body.cl == 'F')
+  if(req.body.cl == 'First')
     cl = 'First'
   else
     cl = 'Economy'
@@ -311,8 +306,10 @@ app.post('/bookc', function(req, response){
 })
 
 app.post('/deletebooking', function(req, response) {
+  console.log('here')
   pg.connect(conString, function (err, client, done) {
     if (err) {
+      console.log('here1')
       return console.error('could not connect to postgres', err)
     }
     var credit = parseInt(req.body.credit)
@@ -322,10 +319,12 @@ app.post('/deletebooking', function(req, response) {
       if (err) {
         console.log (err.stack)
         done
+        console.log('here2')
         response.sendFile('Web_design/wbooking.html', {root: __dirname })
       } else{
         console.log(res.rows[0])
         done
+        console.log('here3')
         response.sendFile('Web_design/abooking.html', {root: __dirname })
       }
     })
@@ -692,7 +691,6 @@ app.post('/booking', function(req, response) {
   }
 })
 
-  
 app.listen(8080, function(){
 console.log('Server running at http://127.0.0.1:8080/');
 })

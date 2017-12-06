@@ -22,6 +22,7 @@
                 <th>Flight Number</th>
                 <th>Travel Class</th>
                 <th>Credit Card Used</th>
+                <th>Delete Booking</th>
             </tr>
             <% drinks.forEach(function(drink) { %>
                 <tr>
@@ -30,12 +31,13 @@
                     <th><%= drink.fl %></th>
                     <td><%= drink.se %></td>
                     <td><%= drink.cn %></td>
+                    <td><button class="btn btn-default" type="submit" name="bn" value=<%= drink.bn %></button>X</button></td>
                 </tr>
             <% }); %>
-        </table>
+        </table><!--
         <h1>Delete booking</h1>
             <text class="btn btn-default">Booking Number</text><input type="text" placeholder="Booking Number" name="bn"><br>
-            <input  class="btn btn-default" type="submit" value="Delete Booking" name="check"/>
+            <input  class="btn btn-default" type="submit" value="Delete Booking" name="check"/>-->
         </form>
     </div>
 </main>
