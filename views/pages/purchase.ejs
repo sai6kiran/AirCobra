@@ -15,18 +15,21 @@
     <div class="jumbotron">
         <form action="http://127.0.0.1:8080/bookc" method="POST">
             <h2>The following are your available credit card number(s) and chosen flight information</h2>
-            <ul>
-                    <% drinks.forEach(function(drink) { %>
-                        <li><%= drink.cnumber %></li>
-                    <% }); %>
-            </ul>
-            <h2>Chosen Airline(s)</h2>
-            <p><%= airline %></p>
-            <h2>Chosen Flight(s)</h2>
-            <p><%= flight %></p>
             <h2>Chosen Class(s)</h2>
             <p><%= cl %></p>
-            <text >Choose a credit card by entering it or go to update information to add a credit card</text><br>
+            <table>
+                <tr>
+                    <th>Airplane Code</th>
+                    <th>Flight Number</th>
+                </tr>
+                <% fly.forEach(function(drink) { %>
+                    <tr>
+                        <td><%= drink.ac %></td>
+                        <td><%= drink.fn %></td>
+                    </tr>
+                <% }); %>
+            </table>
+            <h3 >Choose a credit card by entering it or go to update information to add a credit card</h3><br>
             <text class="btn btn-default">Credit Card Number</text>
             <select id="mySelect"  class="btn btn-default dropdown-toggle" name = "ac" value = "Limit of Connections" >
                     <% drinks.forEach(function(drink) { %>

@@ -31,7 +31,7 @@
                     <th><%= drink.fl %></th>
                     <td><%= drink.se %></td>
                     <td><%= drink.cn %></td>
-                    <td><button class="btn btn-default" type="submit" name="bn" value=<%= drink.bn %></button>X</button></td>
+                    <td><button class="btn btn-default" type="submit" name="bn" value=<%= drink.bn+","+drink.ac+","+drink.fl+","+drink.se %>>X</button></td>
                 </tr>
             <% }); %>
         </table><!--

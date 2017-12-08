@@ -1,0 +1,86 @@
+<!-- views/pages/booking.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Round TRIP No CONNECTIONS </h1>
+        <p>Please select the flight(s) or go back to enter new criteria</p>
+        <form action="http://127.0.0.1:8080/book0" method="POST">
+        <table>
+            <tr>
+                <th>Airplane Code</th>
+                <th>Flight Number</th>
+                <th>Available Seats</th>
+                <th>Departure Airport</th>
+                <th>Destination Airport</th>
+                <th>Departure Time</th>
+                <th>Arival Time</th>
+                <th>Total Travel Time</th>
+                <th>Total Price</th>
+                <th>Travel Class</th>
+            </tr>
+            <% drinks.forEach(function(drink) { %>
+                <tr>
+                    <td><%= drink.ac %></td>
+                    <td><%= drink.fn %></td>
+                    <th><%= drink.seat %></th>
+                    <td><%= drink.iata %></td>
+                    <td><%= drink.diata %></td>
+                    <td><%= drink.dtime %></td>
+                    <td><%= drink.atime %></td>
+                    <td><%= drink.duration %></td>
+                    <td><%= drink.tprice %></td>
+                    <td><%= drink.class %></td>
+                    <input type="text" style = "visibility: hidden" name="cl" value = <%= drink.class %>>
+                </tr>
+            <% }); %>
+            <tr>
+                    <th>Airplane Code</th>
+                    <th>Flight Number</th>
+                    <th>Available Seats</th>
+                    <th>Departure Airport</th>
+                    <th>Destination Airport</th>
+                    <th>Departure Time</th>
+                    <th>Arival Time</th>
+                    <th>Total Travel Time</th>
+                    <th>Total Price</th>
+                    <th>Travel Class</th>
+                    <th>Book</th>
+                </tr>
+                <% drinks.forEach(function(drink) { %>
+                    <tr>
+                        <td><%= drink.ac1 %></td>
+                        <td><%= drink.fn1 %></td>
+                        <th><%= drink.seat1 %></th>
+                        <td><%= drink.iata1 %></td>
+                        <td><%= drink.diata1 %></td>
+                        <td><%= drink.dtime1 %></td>
+                        <td><%= drink.atime1 %></td>
+                        <td><%= drink.duration %></td>
+                        <td><%= drink.tprice %></td>
+                        <td><%= drink.class %></td>
+                        <td><button class="btn btn-default" type="submit" name="ac" value= <%= drink.fn+","+drink.fn2+"."+drink.ac+","+drink.ac2 %> >Select</button></td>
+                    </tr>
+                <% }); %>
+        </table>
+            <input type="text" value = '0' style = "visibility: hidden" name="c"><br>
+        </form>
+    </div>
+</main>
+
+<footer class="container-fluid text-center">
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

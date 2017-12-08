@@ -1,0 +1,156 @@
+<!-- views/pages/admin.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>DATABASE</h1>
+        <h2>CUSTOMER</h2>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Home Address</th>
+                <th>Home IATA</th>
+            </tr>
+        <% cust.forEach(function(drink) { %>
+            <tr>
+                <td><%= drink.fn %></td>
+                <td><%= drink.ln %></td>
+                <td><%= drink.em %></td>
+                <td><%= drink.ad %></td>
+                <td><%= drink.hi %></td>
+            </tr>
+        <% }); %>
+        </table>
+            <h2>CREDIT CARD</h2>
+            <table>
+                <tr>
+                    <th>Email</th>
+                    <th>Credit Card Number</th>
+                    <th>Payment Address</th>
+                </tr>
+            <% cred.forEach(function(drink) { %>
+                <tr>
+                    <td><%= drink.em %></td>
+                    <td><%= drink.cn %></td>
+                    <td><%= drink.pa %></td>
+                </tr>
+            <% }); %>
+            </table>
+        <h2>AIRPORT</h2>
+        <table>
+            <tr>
+                <th>IATA</th>
+                <th>Airport Name</th>
+                <th>State</th>
+                <th>Country</th>
+            </tr>
+        <% airp.forEach(function(drink) { %>
+            <tr>
+                <td><%= drink.ia %></td>
+                <td><%= drink.ap %></td>
+                <td><%= drink.st %></td>
+                <td><%= drink.co %></td>
+            </tr>
+        <% }); %>
+        </table>
+            <h2>AIRLINE</h2>
+            <table>
+                <tr>
+                    <th>Airline Code</th>
+                    <th>Airline Name</th>
+                    <th>IATA</th>
+                    <th>Country of Origin</th>
+                </tr>
+            <% airl.forEach(function(drink) { %>
+                <tr>
+                    <td><%= drink.ai %></td>
+                    <td><%= drink.fn %></td>
+                    <td><%= drink.ia %></td>
+                    <td><%= drink.co %></td>
+                </tr>
+            <% }); %>
+            </table>
+        <h2>FLIGHT</h2>
+        <table>
+            <tr>
+                <th>Airline Code</th>
+                <th>Flight Number</th>
+                <th>Current Airport</th>
+                <th>Leaving Data</th>
+                <th>Destination Airport</th>
+                <th>Arrival Date</th>
+                <th>Available First Class Seats</th>
+                <th>Available Economy Class Seats</th>
+            </tr>
+        <% flight.forEach(function(drink) { %>
+            <tr>
+                <td><%= drink.ac %></td>
+                <td><%= drink.fn %></td>
+                <td><%= drink.ia %></td>
+                <td><%= drink.dt %></td>
+                <td><%= drink.di %></td>
+                <td><%= drink.ddt %></td>
+                <td><%= drink.fs %></td>
+                <td><%= drink.es %></td>
+            </tr>
+        <% }); %>
+        </table>
+            <h2>PRICE</h2>
+            <table>
+                <tr>
+                    <th>Airline Code</th>
+                    <th>Flight Number</th>
+                    <th>First Class Price</th>
+                    <th>Economy Class Price </th>
+                </tr>
+            <% price.forEach(function(drink) { %>
+                <tr>
+                    <td><%= drink.ac %></td>
+                    <td><%= drink.fn %></td>
+                    <td><%= drink.fp %></td>
+                    <td><%= drink.ep %></td>
+                </tr>
+            <% }); %>
+            </table>
+        <h2>BOOKING</h2>
+        <table>
+            <tr>
+                <th>Booking Number</th>
+                <th>Airline Code</th>
+                <th>Flight Number</th>
+                <th>Seat Class</th>
+                <th>Email</th>
+                <th>Credit Card Number</th>
+            </tr>
+        <% book.forEach(function(drink) { %>
+            <tr>
+                <td><%= drink.bo %></td>
+                <td><%= drink.ai %></td>
+                <td><%= drink.fl %></td>
+                <td><%= drink.se %></td>
+                <td><%= drink.em %></td>
+                <td><%= drink.cn %></td>
+            </tr>
+        <% }); %>
+        </table>
+    </div>
+</main>
+
+<footer class="container-fluid text-center">
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
